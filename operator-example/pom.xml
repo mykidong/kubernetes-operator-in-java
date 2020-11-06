@@ -84,12 +84,10 @@
   <profiles>
     <profile>
       <id>native</id>
-      <properties>
-        <quarkus.native.additional-build-args>-H:IncludeResources=daemonset.yaml</quarkus.native.additional-build-args>
-      </properties>
       <activation>
         <property>
           <name>native</name>
+          <quarkus.native.additional-build-args>-H:IncludeResources=daemonset.yaml</quarkus.native.additional-build-args>
         </property>
       </activation>
       <build>
