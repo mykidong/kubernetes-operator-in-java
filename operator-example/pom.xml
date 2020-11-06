@@ -84,6 +84,9 @@
   <profiles>
     <profile>
       <id>native</id>
+      <properties>
+        <quarkus.native.additional-build-args>-H:IncludeResources=daemonset.yaml</quarkus.native.additional-build-args>
+      </properties>
       <activation>
         <property>
           <name>native</name>
@@ -101,7 +104,6 @@
                   <goal>verify</goal>
                 </goals>
                 <configuration>
-                  <additionalBuildArgs>-H:IncludeResources=daemonset.yaml</additionalBuildArgs>
                   <systemPropertyVariables>
                     <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
                     <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
